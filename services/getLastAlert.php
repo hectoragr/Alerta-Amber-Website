@@ -19,12 +19,12 @@
 	}
 	else
 	{
-		$statement = $db->prepare("SELECT nombre, apellidos, fecha_suceso, fotografia FROM Alerta WHERE Entidad_Federativa_id = ?  AND Status_id = 1 ORDER BY fecha_suceso DESC");
+		$statement = $db->prepare("SELECT nombre, apellidos, fecha_suceso, fotografia FROM Alerta WHERE Entidad_Federativa_id = ?  AND Status_id = 1 ORDER BY fecha_suceso DESC LIMIT 1");
 		$values = array($estado);
 		$statement->execute($values);
 		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	header("application/json");
-	echo json_encode($data);
+	echo json_encode($data[0]);
 ?>

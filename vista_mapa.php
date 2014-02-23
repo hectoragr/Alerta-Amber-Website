@@ -113,11 +113,11 @@ function updateMarkerAddress(str) {
         <div class="nav-collapse collapse">
           <nav id="menu">
             <ul class="nav docs-navbar-menu">
-              <li><a class="brand" href="index.php">AmberMX</a></li>
-              <li class=""><a href="alta.php">Nueva Alerta</a></li>
-              <li class=""><a href="registros.php">Ver registros </a></li>
-              <li class=""><a href="estadisticas.php">Estadísticas</a></li>
-              <li class=""><a href="vista_mapa.php">Ver Mapa de Alertas</a></li> 
+              <li><a class="brand" href="index.html">AmberMX</a></li>
+              <li class=""><a href="alta.html">Nueva Alerta</a></li>
+              <li class=""><a href="registros.html">Ver registros </a></li>
+              <li class=""><a href="estadisticas.html">Estadísticas</a></li>
+              <li class=""><a href="vista_mapa.html">Ver Mapa de Alertas</a></li> 
             </ul>
           </nav>
         </div>
@@ -125,111 +125,52 @@ function updateMarkerAddress(str) {
     </div>
   </div>
     <div class="container-center">
-      <h3 align="left">Alta de alerta</h3>
       <div class="row">
-        <form name="Registro" id="formaDeRegistro">
-           <div class="col-6" align="left">
-              <h5>Campos Obligatorios</h5>
-              <div class="form-fields">
-                <label for="">Nombre</label>
-                <input class="input-medium" type="text" name="firstName" id="firstName"><br>
+        <div class="col-3" align="left">
+        <div class="docs-sidebar" data-offset-top="80">
+          <form id="campos" name="campos">
+          <ul class="nav nav-bordered">
+            <li><div class="form-fields">
+                <label for="key">Homoclave</label>
+                <input class="input-xlarge" type="text" name="key" id="key"><br>
               </div>
-              <div class="form-fields">
-                <label for="">Apellido</label>
-                <input class="input-medium" type="text" name="lastName" id="lastName"><br>
+            </li><hr>
+            <li><div class="form-fields">
+                <label for="firstName">Nombre</label>
+                <input class="input-xlarge" type="text" name="firstName" id="firstName"><br>
               </div>
-              <div class="checkbox-fields">
-              <label for="genero">Género</label>
-                <input name="genero" id="masculino" type="radio" value="M">Masculino</input>
-                <input name="genero" id="femenino" type="radio" value="F">Femenino</input>
-              </label>
-              </div>
-              <div class="form-fields">
-                <label for="height">Estatura</label>
-                <input class="input-small" type="number" name="height" id="height" placeholder="metros"><br>
-              </div>
-              <div class="form-fields">
-                <label for="weight">Peso</label>
-                <input class="input-small" type="number" name="weight" id="weight" placeholder="kg"><br>
-              </div>
-              <div class="form-fields">
-                <label for="birthday">Fecha de nacimiento</label>
-                <input class="input-small" type="date" name="birthday" id="birthday"><br>
-              </div>
-              <div class="form-fields">
-                <label for="place">Lugar <a href="javascript:initialize()" class="btn btn-info">Indicar en el mapa</a></label>
-                <textarea class="input-block" rows="3" name="place" id="place"></textarea>
-                <div id="map_canvas" style="width: 400px; height: 350px; display: none;"></div><br>
-                <div id="infoPanel" style="display:none">
-                <b>Marker status:</b>
-                <div id="markerStatus" style="display:none"><i>Click and drag the marker.</i></div>
-                <b>Current position:</b>
-                <div id="info"></div>
-                <b>Closest matching address:</b>
-                <div id="address"></div>
-                </div>
-              </div>
+            </li><hr>
+            <li><div class="form-fields">
+              <label for="lastName">Apellidos</label>
+              <input class="input-xlarge" type="text" name="lastName" id="lastName"><br>
             </div>
-            <div class="col-6" align="left">
-              <h5>Campos Opcionales</h5>
-              <div class="form-fields">
-                <label for="photo">Foto del extraviado </label>
-                <input type="file" name="photo" id="photo"></input>
-              </div>
-              <div class="form-fields">
-                <label for="clothes">Descripción de ropa</label>
-                <textarea class="input-block" rows="2" name="clothes" id="clothes"></textarea><br>
-              </div>
-              <div class="form-fields">
-                <label for="eyes">Ojos </label>
-                <select name="eyes" id="eyes">
-                  <option selected="selected"></option>
-                  <option value="blue">Azules</option>
-                  <option value="green">Verdes</option>
-                  <option value="brown">Marrón</option>
-                  <option value="black">Negro</option>
-                </select>
-              </div>
-              <div class="form-fields">
-                <label for="hair">Cabello</label>
-                <input class="input-small" type="text" name="hair" id="hair"><br>
-              </div>
-              <div class="form-fields">
-                <label for="skin">Piel</label>
-                <input class="input-small" type="text" name="skin" id="skin"><br>
-              </div>
-              <div class="form-fields">
-                <label for="marks">Marcas especiales</label>
-                <textarea class="input-block" rows="2" name="marks" id="marks"></textarea><br>
-              </div>
-              <div class="form-fields">
-                <label for="complexion">Complexión </label>
-                <select name="complexion" id="complexion">
-                  <option selected="selected"></option>
-                  <option value="delgado">Delgado</option>
-                  <option value="normal">Peso adecuado</option>
-                  <option value="sobrepeso">Sobrepeso</option>
-                </select>
-              </div>
-              <div class="form-fields">
-                <label for="people_involved">Involucrados</label>
-                <textarea class="input-block" rows="3" name="people_involved" id="people_involved"></textarea><br>
-              </div>
-              <div class="checkbox-fields">
-              <label for="car">¿Hay un vehículo involucrado?</label>
-                <input name="car" id="con_vehiculo" type="radio" value="T">Sí</input>
-                <input name="car" id="sin_vehiculo" type="radio" value="F">No</input>
-              </label>
-              </div>
+            </li><hr>
+            <li><div class="form-fields">
+              <label for="age">Edad</label>
+              <input class="input-large" type="number" name="age" id="age"><br>
             </div>
-            <a href="javascript:save()" class="btn btn-success">Listo</a> 
+            </li><hr>
+            <li><div class="form-fields">
+              <label for="date">Fecha de Suceso</label>
+              <input class="input-large" type="date" name="date" id="date"><br>
+            </div>
+            </li>
+          </ul>
+           <a href="javascript:filtrar()" class="btn btn-success">Filtrar</a> 
+        </div>
           </form>
       </div>
-    <div class="row footer">
-    <p class="copyright">By <a href="#" class="docs-license">AmberMx</a></p>
-    <ul class="inline">   
-    </ul>
-    </div>
+      <div class="col-9">
+      <table border="1" cellpadding="4">
+        <tr class="tr" style="font-size: 13px">
+          <td style="background-color:#28b262;color:#FFF">Alertas de este día</td>
+          <td style="background-color:#2a83bd;color:#FFF">Entre 1-7 días</td>
+          <td style="background-color:#d85600;color:#FFF">De 1 a 4 semanas</td>
+          <td style="background-color:#c43a2c;color:#FFF">De 1 a 3 meses</td>
+          <td style="background-color:#262933;color:#FFF">Más de 3 meses</td>
+        </tr>
+      </table>
+      <div id="map_canvas" style="width: 700px; height: 500px;"></div><br>
   </div>
 
 <script src="assets/js/jquery.js"></script>
