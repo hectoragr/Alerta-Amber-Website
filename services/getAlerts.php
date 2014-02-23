@@ -14,14 +14,14 @@
 
 	if (empty($estado))
 	{
-		$statement = $db->conexion->prepare("SELECT * FROM Alerta");
+		$statement = $db->conexion->prepare("SELECT nombre, apellidos, fecha_suceso, fotografia FROM Alerta");
 		$statement->execute();
 		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
 	}
 	else
 	{
-		$statement = $db->conexion->prepare("SELECT * FROM Alerta WHERE Entidad_Federativa_id = ?");
-		$values = array($estado)
+		$statement = $db->conexion->prepare("SELECT nombre, apellidos, fecha_suceso, fotografia FROM Alerta WHERE Entidad_Federativa_id = ?");
+		$values = array($estado);
 		$statement->execute($values);
 		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
 	}

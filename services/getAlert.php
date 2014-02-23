@@ -7,23 +7,21 @@
 
 	if(isset($_POST['alerta']))
 	{
-		$estado = $_POST'alerta'];
+		$alerta = $_POST'alerta'];
 	}
 
 	$data = array();
 
-	if (empty($estado))
+	if (empty($alerta))
 	{
-		$statement = $db->conexion->prepare("SELECT * FROM Alerta");
-		$statement->execute();
-		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
-	}
-	else
-	{
-		$statement = $db->conexion->prepare("SELECT * FROM Alerta WHERE Entidad_Federativa_id = ?");
-		$values = array($estado)
+		$statement = $db->conexion->prepare("SELECT * FROM Alerta WHERE id = ?");
+		$values = array($alerta);
 		$statement->execute($values);
 		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
+		if (!empty($data))
+		{
+			$data = $data[0];
+		}
 	}
 
 	header("application/json");
