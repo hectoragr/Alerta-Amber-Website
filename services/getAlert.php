@@ -22,7 +22,7 @@
 	{
 		$homoclave = $_POST['homoclave'];
 		if(!empty($homoclave))
-			$extra_query .= " AND homoclave = 'homoclave'";
+			$extra_query .= " AND homoclave = '$homoclave'";
 	}
 
 
