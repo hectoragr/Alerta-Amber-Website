@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="">
 <head>
-<meta charset="utf-8" />
+<meta charset=utf-8 />
 <title>AmberMX</title>
 <link rel="stylesheet" href="assets/css/normalize.css" />
 <link rel="stylesheet" href="assets/css/furatto.css" />
@@ -13,38 +13,9 @@
 <link rel="stylesheet" href="css/styles.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/parse.js"></script>
+<script type="text/javascript" src="js/parse-1.2.13.min.js"></script>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
-var geocoder = new google.maps.Geocoder();
-
-function geocodePosition(pos) {
-  geocoder.geocode({
-    latLng: pos
-  }, function(responses) {
-    if (responses && responses.length > 0) {
-      updateMarkerAddress(responses[0].formatted_address);
-    } else {
-      updateMarkerAddress('No se pudo determinar dirección, por favor escríbala.');
-    }
-  });
-}
-
-function updateMarkerStatus(str) {
-  document.getElementById('markerStatus').innerHTML = str;
-}
-
-function updateMarkerPosition(latLng) {
-  document.getElementById('info').innerHTML = [
-    latLng.lat(),
-    latLng.lng()
-  ].join(', ');
-}
-
-function updateMarkerAddress(str) {
-  document.getElementById('place').innerHTML = str;
-}
-
 
   function initialize() {
     var latLng = new google.maps.LatLng(25.673808,-100.309192);
@@ -57,47 +28,10 @@ function updateMarkerAddress(str) {
     var div = document.getElementById("map_canvas");
     var map = new google.maps.Map(div,
         mapOptions);
-    if(div.style.display=="none")
-      div.style.display="";
-    else
-      div.style.display="none";
-
-    var marker = new google.maps.Marker({
-    position: latLng,
-    title: 'Point A',
-    map: map,
-    draggable: true
-    });
-
-    // Update current position info.
-    updateMarkerPosition(latLng);
-    geocodePosition(latLng);
-
-    // Add dragging event listeners.
-    google.maps.event.addListener(marker, 'dragstart', function() {
-      updateMarkerAddress('Obteniendo...');
-    });
-
-    google.maps.event.addListener(marker, 'drag', function() {
-      updateMarkerStatus('Obteniendo...');
-      updateMarkerPosition(marker.getPosition());
-    });
-
-    google.maps.event.addListener(marker, 'dragend', function() {
-      updateMarkerStatus('Calculado');
-      geocodePosition(marker.getPosition());
-    });
   }
+// Onload handler to fire off the app.
+google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<style>
-#infoPanel {
-    float: left;
-    margin-left: 10px;
-  }
-  #infoPanel div {
-    margin-bottom: 5px;
-  }
-</style>
 </head>
 <body>
 <div class="panels ">
@@ -113,7 +47,7 @@ function updateMarkerAddress(str) {
         <div class="nav-collapse collapse">
           <nav id="menu">
             <ul class="nav docs-navbar-menu">
-              <li><a class="brand" href="index.php">AmberMX</a></li>
+              <li><a class="brand" href="index.html">AmberMX</a></li>
               <li class=""><a href="alta.php">Nueva Alerta</a></li>
               <li class=""><a href="registros.php">Ver registros </a></li>
               <li class=""><a href="estadisticas.php">Estadísticas</a></li>

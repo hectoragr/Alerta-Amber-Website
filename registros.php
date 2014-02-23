@@ -46,37 +46,10 @@
       <br>
     </div>
     <div class="container-center">
-      <div class="features">
-        <div class="row">
-           <div class="col-6">
-            <h1 class="muted">Conecta</h1>  
-            <p class="feature-description">Conecta con personas que antes no conocías. Tak amplia tu círculo de contactos.</p>
-           </div>
-           <div class="col-6">
-             <img src="http://placehold.it/200x200" alt="" class="img img-well"/>
-           </div>
-        </div>
-        <div class="row">
-           <div class="col-6">
-             <img src="http://placehold.it/200x200" alt="" class="img img-well"/>
-           </div>
-           <div class="col-6">
-            <h1 class="muted">Encuentra</h1>  
-            <p class="feature-description">Tak te permite explorar las habilidades e ideas que te rodean.</p>
-           </div>
-        </div>
-        <div class="row">
-           <div class="col-6">
-            <h1 class="muted">Gana</h1>  
-            <p class="feature-description">Gana dinero y/o experiencia por hacer lo que siempre haces.</p>
-           </div>
-           <div class="col-6">
-             <img src="http://placehold.it/200x200" alt="" class="img img-well"/>
-           </div>
-        </div>
+      <div id ="lista" class="features">
+
       </div>
     </div>
-      <a href="registro.html" align="center" class="btn btn-info">Comienza ahora</a> 
     <div class="row footer">
             <p class="copyright">By <a href="#" class="docs-license">AmberMx</a></p>
             <ul class="inline">   
@@ -87,5 +60,6 @@
 
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/furatto.min.js"></script>
+<script src="js/registros.js"></script>
 </body>
 </html>

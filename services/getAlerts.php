@@ -15,18 +15,18 @@
 
 	if (empty($estado))
 	{
-		$statement = $db->prepare("SELECT nombre, apellidos, fecha_suceso, fotografia FROM Alerta WHERE Status_id = 1 ORDER BY fecha_suceso DESC");
+		$statement = $db->prepare("SELECT id, nombre, apellidos, homoclave, fecha_suceso, fotografia FROM Alerta WHERE Status_id = 1 ORDER BY fecha_suceso DESC");
 		$statement->execute();
 		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
 	}
 	else
 	{
-		$statement = $db->prepare("SELECT nombre, apellidos, fecha_suceso, fotografia FROM Alerta WHERE Entidad_Federativa_id = ?  AND Status_id = 1 ORDER BY fecha_suceso DESC");
+		$statement = $db->prepare("SELECT id, nombre, apellidos, homoclave, fecha_suceso, fotografia FROM Alerta WHERE Entidad_Federativa_id = ?  AND Status_id = 1 ORDER BY fecha_suceso DESC");
 		$values = array($estado);
 		$statement->execute($values);
 		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
 	}
-
+	header("access-control-allow-origin: *");
 	header("application/json");
 	echo json_encode($data);
 ?>
