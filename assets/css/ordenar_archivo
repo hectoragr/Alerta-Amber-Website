@@ -1,0 +1,2 @@
+awk 'BEGIN { RS = "}" } ; { print $0 }' furatto.css >> furato_ordenado.css
+

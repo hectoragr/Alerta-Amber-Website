@@ -1,18 +1,18 @@
 <?php
 
-	require_once("conexion/database.php");
+	
 
-	$db = new Database();
+	$db = new PDO('mysql:host=localhost;dbname=ambermx', 'root', 'root',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 	$alerta = "";
 
 	if(isset($_POST['alerta']))
 	{
-		$alerta = $_POST'alerta'];
+		$alerta = $_POST['alerta'];
 	}
 
 	$data = array();
 
-	if (empty($alerta))
+	if (!empty($alerta))
 	{
 		$statement = $db->conexion->prepare("SELECT * FROM Alerta WHERE id = ?");
 		$values = array($alerta);
