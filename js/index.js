@@ -17,7 +17,7 @@ $(document).ready(function()
     },
     complete: function(response) 
     {
-        console.log(response.responseText);
+        alert("Alerta registrada, este es el id de seguimiento: "+response.responseText);
     },
     error: function()
     {
