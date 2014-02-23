@@ -10,19 +10,31 @@
 	{
 		$alerta = $_POST['id'];
 	}
+	$extra_query = "";
+	if(isset($_POST['nombre']))
+	{
+		$nombre = $_POST['nombre'];
+		if(!empty($nombre))
+			$extra_query .= "AND nombre like '%$nombre%'";
+	}
+
+	if(isset($_POST['homoclave']))
+	{
+		$homoclave = $_POST['homoclave'];
+		if(!empty($homoclave))
+			$extra_query .= " AND homoclave = 'homoclave'";
+	}
+
 
 	$data = array();
 
 	if (!empty($alerta))
 	{
-		$statement = $db->prepare("SELECT * FROM Alerta WHERE id = ?");
+		$statement = $db->prepare("SELECT * FROM Alerta WHERE id = ?".$extra_query);
 		$values = array($alerta);
 		$statement->execute($values);
 		$data = $statement->fetchAll(PDO::FETCH_ASSOC);
-		if (!empty($data))
-		{
-			$data = $data[0];
-		}
+
 	}
 	header("access-control-allow-origin: *");
 	header("application/json");
