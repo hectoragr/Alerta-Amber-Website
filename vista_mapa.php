@@ -47,7 +47,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <div class="nav-collapse collapse">
           <nav id="menu">
             <ul class="nav docs-navbar-menu">
-              <li><a class="brand" href="index.html">AmberMX</a></li>
+              <li><a class="brand" href="index.php">AmberMX</a></li>
               <li class=""><a href="alta.php">Nueva Alerta</a></li>
               <li class=""><a href="registros.php">Ver registros </a></li>
               <li class=""><a href="estadisticas.php">Estadísticas</a></li>
