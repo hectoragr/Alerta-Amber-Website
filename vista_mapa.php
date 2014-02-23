@@ -113,11 +113,11 @@ function updateMarkerAddress(str) {
         <div class="nav-collapse collapse">
           <nav id="menu">
             <ul class="nav docs-navbar-menu">
-              <li><a class="brand" href="index.html">AmberMX</a></li>
-              <li class=""><a href="alta.html">Nueva Alerta</a></li>
-              <li class=""><a href="registros.html">Ver registros </a></li>
-              <li class=""><a href="estadisticas.html">Estadísticas</a></li>
-              <li class=""><a href="vista_mapa.html">Ver Mapa de Alertas</a></li> 
+              <li><a class="brand" href="index.php">AmberMX</a></li>
+              <li class=""><a href="alta.php">Nueva Alerta</a></li>
+              <li class=""><a href="registros.php">Ver registros </a></li>
+              <li class=""><a href="estadisticas.php">Estadísticas</a></li>
+              <li class=""><a href="vista_mapa.php">Ver Mapa de Alertas</a></li> 
             </ul>
           </nav>
         </div>
