@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html class="">
 <head>
-<meta charset=utf-8 />
-<title>Tak</title>
+<meta charset="utf-8" />
+<title>AmberMX</title>
 <link rel="stylesheet" href="assets/css/normalize.css" />
 <link rel="stylesheet" href="assets/css/furatto.css" />
 <link rel="stylesheet" href="assets/css/font-awesome.css" />
@@ -12,8 +12,7 @@
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/styles.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+
 </head>
 <body>
 <div class="panels ">
@@ -29,11 +28,11 @@
         <div class="nav-collapse collapse">
           <nav id="menu">
             <ul class="nav docs-navbar-menu">
-              <li><a class="brand" href="index.html">AmberMX</a></li>
-              <li class=""><a href="alta.html">Nueva Alerta</a></li>
-              <li class=""><a href="registros.html">Ver registros </a></li>
-              <li class=""><a href="estadisticas.html">Estadísticas</a></li>
-              <li class=""><a href="vista_mapa.html">Ver Mapa de Alertas</a></li> 
+              <li><a class="brand" href="index.php">AmberMX</a></li>
+              <li class=""><a href="alta.php">Nueva Alerta</a></li>
+              <li class=""><a href="registros.php">Ver registros </a></li>
+              <li class=""><a href="estadisticas.php">Estadísticas</a></li>
+              <li class=""><a href="vista_mapa.php">Ver Mapa de Alertas</a></li> 
             </ul>
           </nav>
         </div>
@@ -41,8 +40,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="section-container" id="descargar">
+    <div class="section-jumbo-container">
       <h1 class="jumbo-header">AmberMX</h1>
+      <h2 class="motto"><b>Difunde tus alertas Amber</b></h2>
       <br>
     </div>
     <div class="container-center">
@@ -78,7 +78,7 @@
     </div>
       <a href="registro.html" align="center" class="btn btn-info">Comienza ahora</a> 
     <div class="row footer">
-            <p class="copyright">Copyright <a href="#" class="docs-license">Tak Labs</a></p>
+            <p class="copyright">By <a href="#" class="docs-license">AmberMx</a></p>
             <ul class="inline">   
             </ul>
     </div>

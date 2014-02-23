@@ -24,7 +24,7 @@
   	$longitud = $_POST["longitud"];
   	$involucrados = $_POST["involucrados"];
   	$vehiculo = $_POST["vehiculo"];
-	$Entidad_Federativa_id = 1;
+	$Entidad_Federativa_id = 19;
 
 	$data = array();
 	$_POST["lugar"] = utf8_encode($_POST["lugar"]);
